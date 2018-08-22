@@ -21,7 +21,7 @@ class LaraHashSlugProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/sluggable.php' => config_path('sluggable.php'),
+            __DIR__ . '/../config/sluggable.php' => config_path('hashslug.php'),
         ], 'config');
     }
 
