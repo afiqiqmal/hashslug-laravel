@@ -30,9 +30,9 @@ class HashService
      */
     public static function make($salt, $length, $alphabet)
     {
-        $str_salt     = is_null($salt) ? config('hashids.salt') : config('hashids.salt') . $salt;
-        $length       = $length ? $length : config('hashids.length');
-        $alphabet     = $alphabet ? $alphabet : config('hashids.alphabet');
+        $str_salt     = is_null($salt) ? config('hashslug.salt') : config('hashslug.salt') . $salt;
+        $length       = $length ? $length : config('hashslug.length');
+        $alphabet     = $alphabet ? $alphabet : config('hashslug.alphabet');
         $str_salt     = Hash::make($str_salt);
 
         return new self($str_salt, $length, $alphabet);
