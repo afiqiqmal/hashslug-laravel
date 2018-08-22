@@ -3,7 +3,6 @@
 namespace Afiqiqmal\LaraHashSlug;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\Application as LaravelApplication;
 
 /**
  * Created by PhpStorm.
@@ -21,7 +20,9 @@ class LaraHashSlugProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->setUpConfig();
+        $this->publishes([
+            __DIR__ . '/../resources/config/sluggable.php' => config_path('sluggable.php'),
+        ], 'config');
     }
 
 
@@ -32,17 +33,7 @@ class LaraHashSlugProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/hashslug.php', 'hashslug');
         $this->app->singleton(LaraHashSlugObserver::class);
-    }
-
-    protected function setUpConfig()
-    {
-        $source = dirname(__DIR__) . '/config/hashslug.php';
-
-        if ($this->app instanceof LaravelApplication) {
-            $this->publishes([$source => config_path('hashslug.php')], 'config');
-        }
-
-        $this->mergeConfigFrom($source, 'hashslug');
     }
 }
