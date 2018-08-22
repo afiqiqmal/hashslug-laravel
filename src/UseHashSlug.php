@@ -14,7 +14,7 @@ trait UseHashSlug
 {
     public $slug_column = "hashslug";
 
-    public static function bootHasHashSlug()
+    public static function bootUseHashSlug()
     {
         static::observe(app(LaraHashSlugObserver::class));
     }
