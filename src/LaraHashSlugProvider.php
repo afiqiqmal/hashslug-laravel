@@ -32,7 +32,7 @@ class LaraHashSlugProvider extends ServiceProvider
      */
     public function register()
     {
-//        $this->app->singleton(LaraHashSlugObserver::class);
+        $this->app->singleton(LaraHashSlugObserver::class);
     }
 
     protected function setUpConfig()
