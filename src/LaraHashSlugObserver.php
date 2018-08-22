@@ -21,7 +21,7 @@ class LaraHashSlugObserver
         if (Schema::hasColumn($model->getTable(), $slug_column) && is_null($model->{$slug_column})) {
             $timestamp = time() + $model->count() + mt_rand();
 
-            if (config('hashids.unique')) {
+            if (config('hashslug.unique')) {
                 // check if model use soft delete
                 if (method_exists($model, 'bootSoftDeletes')) {
                     $keys = $model->withTrashed()->pluck($slug_column)->toArray();
