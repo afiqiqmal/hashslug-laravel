@@ -1,6 +1,7 @@
 {
     "name": "afiqiqmal/hashslug-laravel",
     "description": "HashSlug for Laravel Model",
+    "keywords": ["package", "laravel", "hashslug"],
     "type": "laravel",
     "require": {
         "php": ">=5.6",
@@ -35,5 +36,10 @@
                 "Afiqiqmal\\LaraHashSlug\\LaraHashSlugProvider"
             ]
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
