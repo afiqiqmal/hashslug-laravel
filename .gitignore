@@ -1,0 +1,5 @@
+.idea
+coverage.xml
+vendor
+composer.lock
+.env

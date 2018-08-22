@@ -1,0 +1,39 @@
+{
+    "name": "afiqiqmal/hashslug-laravel",
+    "description": "HashSlug for Laravel Model",
+    "type": "laravel",
+    "require": {
+        "php": ">=5.6",
+        "illuminate/support": "^5.6",
+        "hashids/hashids": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.3",
+        "orchestra/testbench": "^3.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hafiq",
+            "email": "hafiqiqmal93@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Afiqiqmal\\LaraHashSlug\\": "src"
+        },
+        "files": ["helper/helpers.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Afiqiqmal\\LaraHashSlug\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Afiqiqmal\\LaraHashSlug\\LaraHashSlugProvider"
+            ]
+        }
+    }
+}
