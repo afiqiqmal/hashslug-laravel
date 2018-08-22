@@ -1,7 +1,7 @@
 {
     "name": "afiqiqmal/hashslug-laravel",
     "description": "HashSlug for Laravel Model",
-    "keywords": ["package", "laravel", "hashslug"],
+    "keywords": ["package", "laravel", "hashslug", "model"],
     "type": "laravel",
     "require": {
         "php": ">=5.6",
