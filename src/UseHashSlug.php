@@ -24,7 +24,7 @@ trait UseHashSlug
      */
     protected function getSlugKeyName()
     {
-        return $this->slug_column;
+        return $this->checkProperty('push_title') ? $this->checkProperty('push_title') : $this->slug_column;
     }
 
     /**
@@ -79,5 +79,13 @@ trait UseHashSlug
     public static function findBySlugOrFail($slug, array $columns = ['*'])
     {
         return static::whereSlug($slug)->firstOrFail($columns);
+    }
+
+    private function checkProperty($name)
+    {
+        if (property_exists($this, $name)) {
+            return $this->{$name};
+        }
+        return null;
     }
 }
